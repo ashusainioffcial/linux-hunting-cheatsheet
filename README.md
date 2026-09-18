@@ -29,3 +29,13 @@ Monitor local user profiles and operating footprints to map administrative chang
 - `cat /etc/passwd` — Audits all local system account architectures to look for hidden accounts added by intruders.
 - `last -f /var/log/wtmp` — Views historical logs of user authentication sessions to isolate time stamps of unauthorized access.
 - `ps aux | grep root` — Audits every single running processor stack owned by high-clearance privileges to stop live memory injection vectors.
+
+---
+
+## 🔒 4. Linux Host Hardening & SSH Infrastructure Security
+Proactive terminal configuration steps to close system attack surfaces and block automated brute-force scripts.
+
+- File Location: `/etc/ssh/sshd_config` (The master control blueprint for remote access rules).
+- `PermitRootLogin no` — Explicitly bars the high-clearance default administrative root profile from logging in remotely, breaking botnet target assumptions.
+- `PasswordAuthentication no` — Disables text-based entry fields entirely, forcing the network adapter to demand secure, multi-bit cryptographic SSH key verification files.
+
