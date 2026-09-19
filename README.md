@@ -39,3 +39,10 @@ Proactive terminal configuration steps to close system attack surfaces and block
 - `PermitRootLogin no` — Explicitly bars the high-clearance default administrative root profile from logging in remotely, breaking botnet target assumptions.
 - `PasswordAuthentication no` — Disables text-based entry fields entirely, forcing the network adapter to demand secure, multi-bit cryptographic SSH key verification files.
 
+---
+
+## 🎣 5. Adversary Persistence Mechanics (Reverse Shells & Listeners)
+How automated scheduled cron-jobs maintain infrastructure access post-disconnection:
+- **Reverse Shell (Outbound Call):** The local cron script initiates an outbound network connection targeting the adversary's command node. This pipes the host system terminal shell directly out to the internet, bypassing standard firewall configurations.
+- **Rogue Listener (Secret Door):** The automated script commands the local network card to open unmonitored ports (e.g., Port 54321) into a `LISTENING` state, creating a temporary entrance window for external infiltration sweeps.
+- **Forensic Triage:** Detected by auditing outbound data metrics inside Splunk or running `netstat -ano` inside the native terminal to look for unauthorized outbound hooks or active listening sockets.
